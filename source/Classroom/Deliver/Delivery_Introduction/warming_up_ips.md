@@ -30,22 +30,13 @@ It should be noted that taking this gradual, ramping approach does not guarantee
 Does my IP need to be warmed up? And if so, why?
 {% endanchor %}
 
-If you are sending email from a new or “cold" IP address, ISPs have no means of determining your [sender reputation]({{root_url}}/Glossary/sender_reputation.html). Since this reputation determines whether or not your emails are delivered to your recipients’ inboxes, it is vital to immediately begin establishing a good reputation.
+If you are sending email from a new or “cold" IP address, ISPs have a harder time determining your [sender reputation]({{root_url}}/Glossary/sender_reputation.html). Since this reputation determines whether or not your emails are delivered to your recipients’ inboxes, it is vital to immediately begin establishing a good reputation.
 
-{% info %}
-Remember that it is much easier to establish a positive reputation as a new sender, than it is to repair an existing reputation.
-{% endinfo %}
-
-If you are sending a very low volume of email (less than 10,000 emails/month), ISPs will probably not pay much attention to your sending habits. However, if you are sending higher volumes, the IP warmup process plays a much more significant role in establishing your reputation.
+If you are sending a very low volume of email (less than 10,000 emails/month), it is still a best practice to warm up your new IPs, but ISPs may pay less attention to your sending habits. However, if you are sending higher volumes, the IP warmup process plays a much more significant role in establishing your reputation.
 
 {% info %}
 We recommend that all users warm up new IP addresses regardless of the amount of email they send.
 {% endinfo %}
-
-Your IP address’s history is another important determinant for ISP spam filters. Here are a few additional tools you can use to monitor the reputation of any IP address:
-
-- Return Path's [SenderScore](https://senderscore.org)
-- Cisco's IronPort [SenderBase](http://www.senderbase.org)
 
 {% anchor h2 %}
 How do I warm up my new IP address?
@@ -80,3 +71,9 @@ Why haven't I seen other ESPs require an IP warmup process?
 Many other email service providers, especially those focused on marketing email tools, do not offer dedicated IP addresses to their customers. Many ESPs place all of their customers on a shared IP cluster by default.
 
 While it may be less cost effective and more technically complicated to provide dedicated IPs for our customers, we feel that it is important and empowering for our users to earn their own reputations. This also protects your sender reputation from being impacted by the reputations of other SendGrid users.
+
+{% anchor h2 %}
+Are there any other portions of email that require a warmup?
+{% endanchor %}
+
+We know that major mailbox providers do pay attention to the IP reputation of a sender. However, with the growth of IPV6 addresses, it is more difficult to monitor individual IPs and domain reputation is becoming more of a factor for delivery and message placement. It is important to consider the same warm up process for new domains as well. This can include any new domain that you plan to use within your message content, From address, DKIM signature or ReturnPath address.
